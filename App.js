@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, ScrollView, View, Image, Button, TextInput, Modal, TouchableHighlight } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import ImageList from './app/components/ImageList';
@@ -29,6 +29,10 @@ const App = () => {
     setModalImageUri(image)
     setModalVisible(!modalVisible)
   }
+
+  useEffect(() => {
+    searchImage(searchValue)
+  }, [])
 
     return (
       <View style={styles.container}>
